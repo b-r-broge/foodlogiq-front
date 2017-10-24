@@ -44,21 +44,23 @@ class ApplicantForm extends Component {
     })
     .then(response => {
       this.setState({
-        submitMsg: "Submission Successful!"
+        submitMsg: "Submission Successful!",
+        name: "",
+        coolProb: "",
+        designDesc: "",
+        dreamEnv: ""
       })
       console.log("success", response);
 
     }).catch(err => {
       this.setState({
-        submitMsg: "Submission Failed"
+        submitMsg: "Submission Failed",
+        name: "",
+        coolProb: "",
+        designDesc: "",
+        dreamEnv: ""
       })
       console.log("failure", err);
-    });
-    this.setState({
-      name: "",
-      coolProb: "",
-      designDesc: "",
-      dreamEnv: ""
     });
   }
 
@@ -78,6 +80,8 @@ class ApplicantForm extends Component {
         <textarea name="dreamEnv" id="dreamEnv" value={this.state.dreamEnv} onChange={this.handleChange} rows="3" cols="40" />
 
         <button type="submit" name="submit">Submit</button>
+
+        <h3>{this.state.submitMsg}</h3>
       </form>
     )
   }
