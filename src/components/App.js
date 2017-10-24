@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import '../styles/App.css';
 
 import applicantForm from './Form';
-import applicantResponse from './Responses'
+import applicantResponse from './Response'
 
 class App extends Component {
   render() {
